@@ -41,8 +41,7 @@ namespace symmetrisk_kryptering
 
                 using (MemoryStream memoryStream = new MemoryStream())
                 {
-                    CryptoStream cryptoStream = new CryptoStream(memoryStream, des.CreateDecryptor(),
-                        CryptoStreamMode.Write);
+                    CryptoStream cryptoStream = new CryptoStream(memoryStream, des.CreateDecryptor(),CryptoStreamMode.Write);
 
                     cryptoStream.Write(dataToDecrypt, 0, dataToDecrypt.Length);
                     cryptoStream.FlushFinalBlock();
